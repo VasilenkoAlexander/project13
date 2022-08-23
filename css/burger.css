@@ -1,0 +1,119 @@
+/* Burger menu */
+.burger__body {
+  display: none;
+  position: relative;
+  -ms-grid-column-align: right;
+      justify-self: right;
+  margin-right: 30px;
+}
+
+.burger__btn {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.burger__btn span {
+  position: absolute;
+  top: 50%;
+  width: 25px;
+  height: 2px;
+  background: #000;
+  border-radius: 1px;
+}
+.burger__btn span::after {
+  content: "";
+  width: 25px;
+  height: 2px;
+  background: #000;
+  border-radius: 1px;
+  position: absolute;
+  top: -7px;
+  left: 0;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.burger__btn span::before {
+  content: "";
+  width: 25px;
+  height: 2px;
+  background: #000;
+  border-radius: 1px;
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.burger__btn.hide span::after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 0;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.burger__btn.hide span::before {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  bottom: 0;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.burger__btn.hide span {
+  background: #fff;
+}
+
+.burger__nav {
+  position: absolute;
+  bottom: 65px;
+  right: -22px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.burger__nav.active {
+  bottom: -170px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.burger__nav-list {
+  background: rgba(220, 220, 220, 0.681);
+  padding: 10px;
+  border-radius: 2px;
+}
+
+.burger__list-item {
+  text-align: right;
+  width: 100px;
+}
+.burger__list-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+.burger__list-item a {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.burger__list-item a:hover {
+  text-shadow: 0 0 1px black;
+}
+
+@media (max-width: 769px) {
+  .burger__body {
+    display: block;
+  }
+}
+@media (max-width: 426px) {
+  .burger__body {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3/4;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    text-align: right;
+  }
+}
